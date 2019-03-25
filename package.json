@@ -1,6 +1,6 @@
 {
   "name": "bulk-email-check",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,9 @@
     "email-existence": "^0.1.6",
     "email-permutator": "^1.0.1",
     "fs": "0.0.1-security"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishankjhavar/bulk-email-check.git"
   }
 }
