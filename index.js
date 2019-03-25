@@ -3,8 +3,9 @@ const permute = require('email-permutator');
 var csvsync = require('csvsync');
 var fs = require('fs');
 
+module.exports= function (path){
 // Reading 'file.csv' from project folder
-var csv = fs.readFileSync('file.csv');
+var csv = fs.readFileSync(path);
 var data = csvsync.parse(csv, {
     skipHeader: true,
     returnObject: true,
@@ -31,14 +32,18 @@ permutatedArray = permute({
 permutatedArray.forEach(row => {
 emailExistence.check(row, function(error, response){
     if(response==true){
-        console.log('Found an email for '+element.fName+' '+element.lName + ' on ' + element.domain)
         var csvfinaldata = [element.fName,element.lName,element.domain,row];
         finalArray.push(csvfinaldata);
 
 // Write to a CSV file called 'valid_email.csv'
         var csv = csvsync.stringify(finalArray);
-        fs.writeFileSync('valid_emails.csv', csv);
+        fs.writeFileSync('./valid_emails.csv', csv);
             }
         });
     });
 });
+
+}
+
+// compatibility
+module.exports.generateEmails = module.exports;
