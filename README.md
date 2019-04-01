@@ -8,6 +8,7 @@ Find email addresses in bulk by using names and domains. Made using email-permut
   ```sh
   npm i bulk-email-check
   ```
+  - IMPORTANT: Save your CSV in the root folder (to use the example below, rename it to file.csv). 
   - Pass the input CSV file in generateEmails function
   - Locate the output CSV file (valid_emails.csv) in the root folder of the project
 
